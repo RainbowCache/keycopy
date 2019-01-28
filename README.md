@@ -1,2 +1,2 @@
-# keycopy
+# KeyCopy
 It's like copy and paste for a virtual keyboard.
