@@ -3,13 +3,14 @@ TARGET = keycopy
 SRC_DIR = src
 INCLUDE_DIR = include
 CFLAGS = -I$(INCLUDE_DIR) -Wall
+LDFLAGS = 
 BUILD_DIR = build
 
-$(TARGET): $(BULID_DIR)/main.o
-	 $(COMPILER) $(CFLAGS) $(BUILD_DIR)/main.o -o $(TARGET)
+$(TARGET): $(BUILD_DIR)/main.o
+	 $(COMPILER) $^ -o $@ $(LDFLAGS)
 
-$(BULID_DIR)/main.o: $(SRC_DIR)/main.c $(INCLUDE_DIR)/main.h
-	$(COMPILER) $(CFLAGS) $(SRC_DIR)/main.c -o $(BUILD_DIR)/main.o 
+$(BUILD_DIR)/main.o: $(SRC_DIR)/main.c $(INCLUDE_DIR)/main.h
+	$(COMPILER) $(CFLAGS) $< -o $@ 
 
 .PHONY: clean
 
