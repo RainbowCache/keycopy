@@ -6,11 +6,14 @@ CFLAGS = -c -I$(INCLUDE_DIR) -Wall
 LDFLAGS = 
 BUILD_DIR = build
 
-$(TARGET): $(BUILD_DIR)/main.o
+$(TARGET): $(BUILD_DIR)/main.o $(BUILD_DIR)/keyboard.o
 	 $(COMPILER) $^ -o $@ $(LDFLAGS)
 
 $(BUILD_DIR)/main.o: $(SRC_DIR)/main.c $(INCLUDE_DIR)/main.h
 	$(COMPILER) $(CFLAGS) $< -o $@ 
+
+$(BUILD_DIR)/keyboard.o: $(SRC_DIR)/keyboard.c $(INCLUDE_DIR)/keyboard.h
+	$(COMPILER) $(CFLAGS) $< -o $@
 
 .PHONY: clean
 
