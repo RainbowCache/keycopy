@@ -1,14 +1,19 @@
 #!/bin/bash
 
+# Get user selection
 echo 'Select Target:'
 echo '1) Linux command line.'
 echo '2) Windows command line.'
 echo '3) Windows gui'
 read -p 'Selection (default 1): ' selection
-echo
+
+# Set default selection if nothing entered.
 if [ "$selection" == "" ]; then
 	selection="1"
-elif [ "$selection" == "1" ]; then
+fi
+
+# Parse user selection.
+if [ "$selection" == "1" ]; then
 	echo "Linux command line selected."
 elif [ "$selection" == "2" ]; then
 	echo "Windows command line selected."
