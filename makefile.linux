@@ -1,0 +1,17 @@
+COMPILER = gcc
+TARGET = keycopy
+SRC_DIR = src
+INCLUDE_DIR = include
+CFLAGS = -I$(INCLUDE_DIR) -Wall
+BUILD_DIR = build
+
+$(TARGET): $(BULID_DIR)/main.o
+	 $(COMPILER) $(CFLAGS) $(BUILD_DIR)/main.o -o $(TARGET)
+
+$(BULID_DIR)/main.o: $(SRC_DIR)/main.c $(INCLUDE_DIR)/main.h
+	$(COMPILER) $(CFLAGS) $(SRC_DIR)/main.c -o $(BUILD_DIR)/main.o 
+
+.PHONY: clean
+
+clean:
+	rm -f $(BUILD_DIR)/*.o
