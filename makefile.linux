@@ -2,7 +2,7 @@ COMPILER = gcc
 TARGET = keycopy
 SRC_DIR = src
 INCLUDE_DIR = include
-CFLAGS = -I$(INCLUDE_DIR) -Wall
+CFLAGS = -c -I$(INCLUDE_DIR) -Wall
 LDFLAGS = 
 BUILD_DIR = build
 
@@ -15,4 +15,4 @@ $(BUILD_DIR)/main.o: $(SRC_DIR)/main.c $(INCLUDE_DIR)/main.h
 .PHONY: clean
 
 clean:
-	rm -f $(BUILD_DIR)/*.o
+	rm -f $(BUILD_DIR)/*.o $(TARGET)
