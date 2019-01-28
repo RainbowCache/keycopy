@@ -3,8 +3,8 @@
 # Get user selection
 echo 'Select Target:'
 echo '1) Linux command line.'
-echo '2) Windows command line.'
-echo '3) Windows gui'
+echo '2) Windows (mingw cross compile) command line.'
+echo '3) Windows (mingw cross compile) gui'
 echo '4) Clean'
 read -p 'Selection (default 1): ' selection
 
